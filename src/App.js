@@ -3,8 +3,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import { CssBaseline } from "@material-ui/core";
 
 import "./styles/name.scss";
-import { Footer } from "./components/Footer";
-import { Content } from "./components/Content";
+
+import { Footer } from "./components/Footer/Footer";
+import { Content } from "./components/Content/Content";
+import { Navigation } from "./components/Header/Navigation";
+import { Theme } from "./components/Theme/Theme";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -13,16 +17,12 @@ const useStyles = makeStyles((theme) => ({
         minHeight: "100vh",
     },
     main: {
-        marginTop: theme.spacing(8),
-        marginBottom: theme.spacing(2),
+        marginTop: "auto",
+        marginBottom: "auto",
     },
     footer: {
         padding: theme.spacing(3, 2),
         marginTop: "auto",
-        backgroundColor:
-            theme.palette.type === "light"
-                ? theme.palette.grey[200]
-                : theme.palette.grey[800],
     },
     fab: {
         margin: theme.spacing(2),
@@ -33,10 +33,13 @@ export const App = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
+        <Theme>
             <CssBaseline />
-            <Content mainClasses={classes.main} />
-            <Footer footerClasses={classes.footer} />
-        </div>
+            <div className={classes.root}>
+                <Navigation />
+                <Content mainClasses={classes.main} />
+                <Footer footerClasses={classes.footer} />
+            </div>
+        </Theme>
     );
 };
