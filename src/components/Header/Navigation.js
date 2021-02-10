@@ -1,6 +1,9 @@
 import React, { Fragment } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Avatar, Toolbar, Link } from "@material-ui/core";
+import { Avatar, Toolbar, Link, Tooltip } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
+import Zoom from "@material-ui/core/Zoom";
+
 
 import { ThemeToggle } from "../Theme/ThemeToggle";
 import { primary, white } from "../Theme/Themes";
@@ -25,6 +28,15 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+const PrimaryTooltip = withStyles((theme) => ({
+    tooltip: {
+        backgroundColor: theme.palette.primary.main,
+        color: "#fafafa",
+        boxShadow: theme.shadows[1],
+        fontSize: 11,
+    },
+}))(Tooltip);
+
 export const Navigation = () => {
     const classes = useStyles();
 
@@ -38,10 +50,16 @@ export const Navigation = () => {
                     color="inherit"
                     noWrap
                     className={classes.toolbarTitle}
-                >
+                >    
+                <PrimaryTooltip
+                    title={Resume.basics.name}
+                    placement="right"
+                    TransitionComponent={Zoom}
+                    >
                     <Avatar className={`${classes.green}  icon-spin`}>
                         {Initials}
-                    </Avatar>                
+                    </Avatar>
+                </PrimaryTooltip>         
                 </Link>
                 <nav>
                     <ThemeToggle />
