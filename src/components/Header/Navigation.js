@@ -6,6 +6,7 @@ import { ThemeToggle } from "../Theme/ThemeToggle";
 import { primary, black, white } from "../Theme/Themes";
 import { Initials } from "./Names";
 
+import "../../styles/icons.scss";
 import Resume from "../../resume.json";
 
 const useStyles = makeStyles((theme) => ({
@@ -38,9 +39,10 @@ export const Navigation = () => {
                     noWrap
                     className={classes.toolbarTitle}
                 >
-                    <Avatar className={classes.green}>{Initials}</Avatar>
+                    <Avatar className={`${classes.green}  icon-spin`}>
+                        {Initials}
+                    </Avatar>                
                 </Link>
-
                 <nav>
                     <ThemeToggle />
                 </nav>
