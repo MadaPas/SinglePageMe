@@ -76,7 +76,7 @@ export const Decrypt = (props) => {
 
             i = i === texts.length - 1 ? 0 : i + 1;
 
-            setTimeout(updateText, 4500);
+            setTimeout(updateText, 3000);
         };
 
         const action = setTimeout(updateText, 0);
