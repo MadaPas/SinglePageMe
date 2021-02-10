@@ -1,13 +1,7 @@
-
 import React from "react";
-import ReactDOM from "react-dom";
-// import { createMuiTheme } from "@material-ui/core/styles";
-// import { ThemeProvider, CssBaseline } from "@material-ui/core";
-
-import "./index.css";
+import { render } from "react-snapshot";
 
 import { App } from "./App";
-// import { theme } from "./theme";
+import "./index.css";
 
-
-ReactDOM.render(<App />, document.getElementById("root"));
+render(<App />, document.getElementById("root"));
