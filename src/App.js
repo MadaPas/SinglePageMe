@@ -6,7 +6,7 @@ import { CssBaseline } from "@material-ui/core";
 import "./styles/name.scss";
 
 import { ThemeProvider } from "./components/Theme/ThemeProvider";
-import { Credits } from "./helpers/Credits";
+import { Credits } from "./utils/Credits";
 import { Home } from "./pages/Home";
 import { Loading } from "./components/Loading/Loading";
 import { LoadingError } from "./components/Loading/LoadingError";

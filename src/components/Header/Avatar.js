@@ -3,7 +3,7 @@ import { Link, ListItem, ListItemAvatar, Avatar } from "@material-ui/core";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 
 import { primary, white } from "../Theme/Themes";
-import { FirstName, LastName, Initials } from "../../helpers/Names";
+import { FirstName, LastName, Initials } from "../../utils/Names";
 import "../../styles/name.scss";
 
 const useStyles = makeStyles((theme) =>

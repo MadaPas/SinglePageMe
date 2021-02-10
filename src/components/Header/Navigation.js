@@ -4,7 +4,7 @@ import { Avatar, Toolbar, Link } from "@material-ui/core";
 
 import { ThemeToggle } from "../Theme/ThemeToggle";
 import { primary, white } from "../Theme/Themes";
-import { Initials } from "../../helpers/Names";
+import { Initials } from "../../utils/Names";
 
 import "../../styles/icons.scss";
 import Resume from "../../resume.json";
