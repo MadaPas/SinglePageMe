@@ -7,7 +7,7 @@ import "./styles/name.scss";
 import { Footer } from "./components/Footer/Footer";
 import { Content } from "./components/Content/Content";
 import { Navigation } from "./components/Header/Navigation";
-import { Theme } from "./components/Theme/Theme";
+import { ThemeProvider } from "./components/Theme/ThemeProvider";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -33,13 +33,13 @@ export const App = () => {
     const classes = useStyles();
 
     return (
-        <Theme>
+        <ThemeProvider>
             <CssBaseline />
             <div className={classes.root}>
                 <Navigation />
                 <Content mainClasses={classes.main} />
                 <Footer footerClasses={classes.footer} />
             </div>
-        </Theme>
+        </ThemeProvider>
     );
 };
