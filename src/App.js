@@ -8,7 +8,7 @@ import { Footer } from "./components/Footer/Footer";
 import { Content } from "./components/Content/Content";
 import { Navigation } from "./components/Header/Navigation";
 import { ThemeProvider } from "./components/Theme/ThemeProvider";
-import { Credits } from "./components/Credits";
+import { Credits } from "./helpers/Credits";
 
 
 const useStyles = makeStyles((theme) => ({
