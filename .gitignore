@@ -4,7 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
-resume.json
+
+src/theme.js
 # testing
 /coverage
 # production
