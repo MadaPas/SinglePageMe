@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Grid, Switch } from "@material-ui/core";
 
-import { ThemeContext } from "./ThemeProvider";
+import { ThemeContext } from "../Theme/ThemeProvider"
 
 export const ThemeToggle = () => {
     const { theme, toggleTheme } = useContext(ThemeContext);

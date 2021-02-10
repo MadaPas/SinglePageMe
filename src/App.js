@@ -8,6 +8,7 @@ import { Footer } from "./components/Footer/Footer";
 import { Content } from "./components/Content/Content";
 import { Navigation } from "./components/Header/Navigation";
 import { ThemeProvider } from "./components/Theme/ThemeProvider";
+import { Credits } from "./components/Credits";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -31,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const App = () => {
     const classes = useStyles();
+    Credits();
 
     return (
         <ThemeProvider>
