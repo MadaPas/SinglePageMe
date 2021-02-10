@@ -11,7 +11,8 @@ export const Content = (props) => {
         <Container component="main" className={props.mainClasses} maxWidth="sm">
             <div className="centerTextMobile">
                 <Typography variant="h5" component="h2" gutterBottom>
-                    {Resume.basics.x_title}
+                    <DecryptOnce text={Resume.basics.x_title}>
+                    </DecryptOnce>
                 </Typography>
                 <Typography variant="h2" component="h1" gutterBottom>
                     <DecryptOnce text={Resume.basics.name} />
