@@ -1,47 +1,36 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import React, { Suspense, lazy } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import { CssBaseline } from "@material-ui/core";
 
 import "./styles/name.scss";
 
-import { Footer } from "./components/Footer/Footer";
-import { Content } from "./components/Content/Content";
-import { Navigation } from "./components/Header/Navigation";
 import { ThemeProvider } from "./components/Theme/ThemeProvider";
 import { Credits } from "./helpers/Credits";
-
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
-    },
-    main: {
-        marginTop: "auto",
-        marginBottom: "auto",
-    },
-    footer: {
-        padding: theme.spacing(3, 2),
-        marginTop: "auto",
-    },
-    fab: {
-        margin: theme.spacing(2),
-    },
-}));
+import { Home } from "./pages/Home";
+import { Loading } from "./components/Loading/Loading";
+import { LoadingError } from "./components/Loading/LoadingError";
+import { ErrorBoundary } from "./components/Loading/ErrorBoundary";
+const Resume = lazy(() => import("./pages/Resume"));
+const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
 export const App = () => {
-    const classes = useStyles();
     Credits();
 
     return (
         <ThemeProvider>
             <CssBaseline />
-            <div className={classes.root}>
-                <Navigation />
-                <Content mainClasses={classes.main} />
-                <Footer footerClasses={classes.footer} />
-            </div>
+            <Router>
+                <ErrorBoundary fallback={<LoadingError />}>
+                    <Suspense fallback={<Loading />}>
+                        <Switch>
+                            <Route path="/" exact component={Home} />
+                            <Route path="/resume" component={Resume} />
+                            <Route path="*" component={PageNotFound} />
+                        </Switch>
+                    </Suspense>
+                </ErrorBoundary>
+            </Router>
         </ThemeProvider>
     );
 };
