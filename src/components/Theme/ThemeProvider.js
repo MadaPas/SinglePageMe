@@ -8,6 +8,7 @@ export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
     const getInitialMode = () => {
+        if (typeof window === "undefined") return true;
         const isReturningUser = "dark" in localStorage;
         const savedMode = JSON.parse(localStorage.getItem("dark"));
         const userPrefersDark = getPrefColorScheme();
@@ -34,8 +35,8 @@ export const ThemeProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        localStorage.setItem("dark", JSON.stringify(theme === "dark"));    
-    }, [theme]);
+        typeof window !== "undefined" &&
+            localStorage.setItem("dark", JSON.stringify(theme === "dark"));    }, [theme]);
 
     return (
         <ThemeContext.Provider
