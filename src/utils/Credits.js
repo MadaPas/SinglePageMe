@@ -4,10 +4,13 @@ export const Credits = () => {
 
     const logStyle = [
         "color: #17b978",
-        "font-size: 4em",
+        "font-size: 3em",
         "font-weight: 300",
         "padding: 100px 0px 100px 0px",
     ].join(";");
 
-    return console.log(`%c coded by github.com/MadaPas ${pieceEmoji}`, logStyle);
+    return console.log(
+        `%c © ${new Date().getFullYear()} github.com/MadaPas ${pieceEmoji}`,
+        logStyle
+    );
 };
