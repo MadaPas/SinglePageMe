@@ -9,5 +9,5 @@ export const Credits = () => {
         "padding: 100px 0px 100px 0px",
     ].join(";");
 
-    return console.log(`%c coded by github.com/JoHoop ${pieceEmoji}`, logStyle);
+    return console.log(`%c coded by github.com/MadaPas ${pieceEmoji}`, logStyle);
 };
